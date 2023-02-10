@@ -1,0 +1,34 @@
+version: "3.9"
+x-aws-cluster: arn:aws:ecs:ap-south-1:570110885728:cluster/cf
+volumes:
+
+    vivian-0:
+
+        external: false
+
+services:
+
+    vivian-0:
+
+        logging:
+
+            driver: local
+
+            options:
+                max-size: "20m"
+                max-file: "5"
+                compress: "true"
+
+        restart: on-failure
+        environment:
+            - DOCKER_REGISTRY= 570110885728.dkr.ecr.ap-south-1.amazonaws.com
+            
+        container_name: vivian-2
+        build: .
+        volumes:
+            - "vivian-0:/source"
+        #     - "./data/vivian-0:/destination"
+        #     - "/sys/class/power_supply/BAT0:/source"
+
+        image: irasus/vivian-0:latest
+    
