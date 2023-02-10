@@ -2,7 +2,7 @@ ARG ALPINE_VERSION=3.17
 
 FROM alpine:${ALPINE_VERSION}
 
-MAINTAINER Rajath Bala
+MAINTAINER Rajath Balasubramanyam
 
 ARG TZ=Asia/Kolkata
 
