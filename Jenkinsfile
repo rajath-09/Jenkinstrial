@@ -4,7 +4,7 @@ pipeline {
     stage ('Build') {
       steps {
         sh 'printenv'
-        sh 'docker build -t rajath-09/Jenkinstrial:""$GIT_COMMIT"" .'
+        sh 'docker build -t rajath-09/jenkinstrial:""$GIT_COMMIT"" .'
       }
     }
  
